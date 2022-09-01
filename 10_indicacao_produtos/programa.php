@@ -1,8 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendação de Produtos Marombas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+</body>
+</html>
 <pre>
 <?php
 // mostrar erros 
-    //error_reporting(E_ALL);
-    //ini_set('display_errors', '1');
+    // error_reporting(E_ALL);
+    // ini_set('display_errors', '1');
 // armazena os dados enviados em $_POST na variavel $lista
     // var_dump($_POST);
     $lista = $_POST;
@@ -11,13 +24,15 @@
     unset($lista["q5"]);
     // $lista = (explode("," , $lista["q4"], 5)) + ($lista);
     // var_dump($lista) ;
-    $mostrar_resultado = true;
+    $mostrar_resultado = 0;
     if(empty($lista)){
         $resp_fin = 1;
         mostrar_false();
+        // echo "$classe oioi";
+        // echo $mostrar_resultado;
     }
     function mostrar_false(){
-        $mostrar_resultado = false;
+        $mostrar_resultado = 1;
         return $mostrar_resultado;
     }
 ?>
@@ -26,7 +41,7 @@
 
 
 <?php
-if($mostrar_resultado == true){
+if($mostrar_resultado == 0){
 // cria uma varievel responsavel para cada possibilidade recomendavel
 // var1
     $massa = 0;
@@ -93,28 +108,35 @@ if($mostrar_resultado == true){
     switch($numero_verificacao){
         case 0:
             // echo "massa";
+            // echo $classe;
             $indicacao = "WHEY PROTEIN";
             $indicacao2 = "HEMOGENIN";
+            $classe = "caixa_massa";
             break;        
         case 1:
             // echo "performance";
             $indicacao = "PRÉ-TREINO";
             $indicacao2 = "ESTANOZOLOL";
+            $classe = "caixa_performance";
             break;        
         case 2:
             // echo "secar";
             $indicacao = "SHAKE";
             $indicacao2 = "TREMBOLONA";
+            $classe = "caixa_secar";
             break;        
         case 3:
             // echo "forca";
             $indicacao = "CREATINA";
             $indicacao2 = "OXANDROLONA";
+            $classe = "caixa_forca";
             break;        
         case 4:
             // echo "preguiça";
             $indicacao = "VERGONHA NA CARA";
             $indicacao2 = "CHIFRE";
+            $classe = "caixa_preguica";
+            $classe_extra = "caixa_chifre";
             break;
     }
     $veneno = "";
@@ -126,6 +148,12 @@ if($mostrar_resultado == true){
     }
     if($bomba == "true"){
         $veneno = "<h2>JUNTO COM</h2><h1>$indicacao2</h1> ";
+        if($classe_extra == "caixa_chifre"){
+            $classe = $classe_extra;
+        }
+        else{
+            $classe = "caixa_bomba";
+        }
     }
     elseif($bomba == "random"){
         aleatoriedade();
@@ -133,13 +161,20 @@ if($mostrar_resultado == true){
         $fator_aleatorio = aleatoriedade();
         // echo "$fator_aleatorio";
         if($fator_aleatorio <= 4){
-            $veneno = "<h2>JUNTO COM</h2><h1>$indicacao2</h1> ";
+            if($classe_extra == "caixa_chifre"){
+                $classe = $classe_extra;
+                $veneno = "<h2>JUNTO COM</h2><h1>$indicacao2</h1> ";
+            }
+            else{
+                $classe = "caixa_bomba";
+            }
         }
+        
     }
 }
     function resposta_final($resp_fin, $indicacao, $veneno){
         if($resp_fin == 1){
-            $respostafinal = "<p>POR FAVOR, INSIRA AO MENOS UM DADO!</p>";
+            $respostafinal = "<h1>POR FAVOR, INSIRA AO MENOS UM DADO!</h1>";
         }
         else{
             $respostafinal = "<h2>O SUPLEMENTO MAIS INDICADO PARA VOCÊ É O(A):</h2>
@@ -149,5 +184,12 @@ if($mostrar_resultado == true){
         return $respostafinal;
     }
     echo resposta_final($resp_fin, $indicacao, $veneno);
+    if($resp_fin == 1){
+        $classe = "caixa_falha";
+    }
+    // echo $classe;
 ?>
 <button onclick="window.location.href = 'index.html'">REFAZER</button>
+<div class="<?php echo $classe ?>">
+        
+</div>
