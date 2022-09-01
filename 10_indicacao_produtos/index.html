@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendação de Produtos Marombas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="titulo">QUIZ</h1> 
+    <h1>QUAL SUPLEMENTO VOCÊ PRECISA??</h2>
+    <form action="programa.php" method="POST">
+        <h2>1º QUAL O TIPO DE ATIVIDADE QUE VOCE PRATICA?</h2>
+            <div class="check">
+                <input type="checkbox" class="checkbox" name="q1_1" value="1"> TREINO INTENSO DE CURTA DURAÇÃO <br>
+                <input type="checkbox" class="checkbox" name="q1_2" value="2"> TREINO DE LONGA DURAÇÃO <br>
+                <input type="checkbox" class="checkbox" name="q1_3" value="3"> TREINO PREDOMINATEMENTE AERÓBICO (CORRIDA) <br>
+                <input type="checkbox" class="checkbox" name="q1_4" value="4"> TREINO DE FORÇA E EXPLOSÃO <br>
+                <input type="checkbox" class="checkbox" name="q1_5" value="5"> NENHUMA, TENHO PREGUIÇA <br><br>
+            </div>        
+        <h2>2º QUAL SEU OBJETIVO COM OS TREINOS?</h2>
+            <div class="check">
+                <input type="checkbox" class="checkbox" name="q2_1" value="14"> GANHO DE MASSA MUSCULAR <br>
+                <input type="checkbox" class="checkbox" name="q2_2" value="12"> MANUNTENÇÃO DE MASSA MUSCULAR <br>
+                <input type="checkbox" class="checkbox" name="q2_3" value="23"> MELHORA NA PERFORMANCE <br>
+                <input type="checkbox" class="checkbox" name="q2_4" value="123"> DIMINUIÇÃO DO PERCENTUAL DE GORDURA <br>
+                <input type="checkbox" class="checkbox" name="q2_5" value="5"> FICAR NO SHAPE DEUS GREGO SEM ESFORÇOS <br><br>
+            </div>    
+        <h2>3º O QUE VOCE PROCURA EM UM SUPLEMENTO?</h2>
+            <div class="check">
+                <input type="checkbox" class="checkbox" name="q3_1" value="24"> MAIS DISPOSIÇÃO PARA TREINAR <br>
+                <input type="checkbox" class="checkbox" name="q3_2" value="14"> AUMENTO NO GANHO DE MASSA <br>
+                <input type="checkbox" class="checkbox" name="q3_3" value="123"> AUMENTO DE PERDA DE GORDURA <br>
+                <input type="checkbox" class="checkbox" name="q3_4" value="12"> RECUPERAÇÃO PÓS TREINO MIAS RÁPIDA <br>
+                <input type="checkbox" class="checkbox" name="q3_5" value="5"> MÁGICA MAROMBA <br><br>
+            </div>       
+        <h2>4º O QUE VOCÊ MAIS VALORIZA:</h2>
+            <div class="check">
+                <input type="radio" name="q4" value="124"> UM SHAPE MONSTRO <br>
+                <input type="radio" name="q4" value="34"> SAÚDE <br>
+                <input type="radio" name="q4" value="24"> PERFORMANCE <br>
+                <input type="radio" name="q4" value="1234"> TRAPÉZIO DESCENDENTE <br>
+                <input type="radio" name="q4" value="5"> FICAR DEITADO VENDO NETFLIX <br><br>
+            </div>
+        <h2>5º TEM PRECONCEITO COM A OITAVA MARAVILHA DO MUNDO?? (BOMBAS)</h2>
+        <div class="check">
+            <input type="radio" name="q5" value="true"> CLARO QUE NÃO, NATURAL NÃO CRESCE PODE RECOMENDAR OS VENENOS <br>
+            <input type="radio" name="q5" value="random"> O QUE SÃO BOMBAS?? TALVEZ RECOMENDA OS VENENOS <br>
+            <input type="radio" name="q5" value="false"> SIM, EU SOU UM FRANGO ESQUISITO NÃO PODE RECOMENDAR OS VENENOS <br><br>
+        </div>
+        <button class="btn_enviar" type="submit">Enviar</button>
+    </form>
+</body>
+</html>
