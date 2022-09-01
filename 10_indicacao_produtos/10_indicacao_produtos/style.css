@@ -20,7 +20,7 @@ body{
     width: 800px;
     height: 600px;
     float: right;
-    background-image: url('img_massa.png');
+    background-image: url('./imgs/img_massa.png');
     background-position: center;
     background-size: cover;
 }
@@ -29,7 +29,7 @@ body{
     width: 800px;
     height: 600px;
     float: right;
-    background-image: url('img_performance.png');
+    background-image: url('./imgs/img_performance.png');
     background-position: center;
     background-size: cover;
 }
@@ -38,7 +38,7 @@ body{
     width: 800px;
     height: 600px;
     float: right;
-    background-image: url('img_secar.png');
+    background-image: url('./imgs/img_secar.png');
     background-position: center;
     background-size: cover;
 }
@@ -47,7 +47,7 @@ body{
     width: 800px;
     height: 600px;
     float: right;
-    background-image: url('img_forca.png');
+    background-image: url('./imgs/img_forca.png');
     background-position: center;
     background-size: cover;
 }
@@ -56,7 +56,7 @@ body{
     width: 800px;
     height: 600px;
     float: right;
-    background-image: url('img_preguica.png');
+    background-image: url('./imgs/img_preguica.png');
     background-position: center;
     background-size: cover;
 }
@@ -65,7 +65,7 @@ body{
     width: 800px;
     height: 600px;
     float: right;
-    background-image: url('img_bomba.png');
+    background-image: url('./imgs/img_bomba.png');
     background-position: center;
     background-size: cover;
 }
@@ -74,7 +74,16 @@ body{
     width: 800px;
     height: 600px;
     float: right;
-    background-image: url('img_chifre.png');
+    background-image: url('./imgs/img_chifre.png');
+    background-position: center;
+    background-size: cover;
+}
+.caixa_falha{
+    border: 1px solid black;
+    width: 800px;
+    height: 600px;
+    float: right;
+    background-image: url('./imgs/img_falha.png');
     background-position: center;
     background-size: cover;
 }

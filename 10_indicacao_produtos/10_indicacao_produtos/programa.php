@@ -24,13 +24,15 @@
     unset($lista["q5"]);
     // $lista = (explode("," , $lista["q4"], 5)) + ($lista);
     // var_dump($lista) ;
-    $mostrar_resultado = true;
+    $mostrar_resultado = 0;
     if(empty($lista)){
         $resp_fin = 1;
         mostrar_false();
+        // echo "$classe oioi";
+        // echo $mostrar_resultado;
     }
     function mostrar_false(){
-        $mostrar_resultado = false;
+        $mostrar_resultado = 1;
         return $mostrar_resultado;
     }
 ?>
@@ -39,7 +41,7 @@
 
 
 <?php
-if($mostrar_resultado == true){
+if($mostrar_resultado == 0){
 // cria uma varievel responsavel para cada possibilidade recomendavel
 // var1
     $massa = 0;
@@ -106,6 +108,7 @@ if($mostrar_resultado == true){
     switch($numero_verificacao){
         case 0:
             // echo "massa";
+            // echo $classe;
             $indicacao = "WHEY PROTEIN";
             $indicacao2 = "HEMOGENIN";
             $classe = "caixa_massa";
@@ -181,6 +184,10 @@ if($mostrar_resultado == true){
         return $respostafinal;
     }
     echo resposta_final($resp_fin, $indicacao, $veneno);
+    if($resp_fin == 1){
+        $classe = "caixa_falha";
+    }
+    // echo $classe;
 ?>
 <button onclick="window.location.href = 'index.html'">REFAZER</button>
 <div class="<?php echo $classe ?>">
