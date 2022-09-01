@@ -13,8 +13,12 @@
     // var_dump($lista) ;
     $mostrar_resultado = true;
     if(empty($lista)){
-        $respostafinal = "<p>POR FAVOR, INSIRA AO MENOS UM DADO!</p>";
+        $resp_fin = 1;
+        mostrar_false();
+    }
+    function mostrar_false(){
         $mostrar_resultado = false;
+        return $mostrar_resultado;
     }
 ?>
 </pre>
@@ -114,19 +118,36 @@ if($mostrar_resultado == true){
             break;
     }
     $veneno = "";
+    // echo $bomba;
+    function aleatoriedade(){
+        $aleatoriedade = rand(0,9);
+        // echo $aleatoriedade;
+        return $aleatoriedade;
+    }
     if($bomba == "true"){
         $veneno = "<h2>JUNTO COM</h2><h1>$indicacao2</h1> ";
     }
     elseif($bomba == "random"){
-        $fator_aleatorio = rand(0,9);
+        aleatoriedade();
+        // echo aleatoriedade();
+        $fator_aleatorio = aleatoriedade();
+        // echo "$fator_aleatorio";
         if($fator_aleatorio <= 4){
             $veneno = "<h2>JUNTO COM</h2><h1>$indicacao2</h1> ";
         }
     }
-    $respostafinal = "<h2>O SUPLEMENTO MAIS INDICADO PARA VOCÊ É O(A):</h2>
-    <h1>$indicacao</h1>
-    $veneno";
 }
-    echo $respostafinal;
+    function resposta_final($resp_fin, $indicacao, $veneno){
+        if($resp_fin == 1){
+            $respostafinal = "<p>POR FAVOR, INSIRA AO MENOS UM DADO!</p>";
+        }
+        else{
+            $respostafinal = "<h2>O SUPLEMENTO MAIS INDICADO PARA VOCÊ É O(A):</h2>
+            <h1>$indicacao</h1>
+            $veneno";
+        }
+        return $respostafinal;
+    }
+    echo resposta_final($resp_fin, $indicacao, $veneno);
 ?>
 <button onclick="window.location.href = 'index.html'">REFAZER</button>
