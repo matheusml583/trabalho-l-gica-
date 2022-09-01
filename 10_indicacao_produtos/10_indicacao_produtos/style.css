@@ -15,3 +15,66 @@ body{
 .checkbox{
     font-size: xxx-large;
 }
+.caixa_massa{
+    border: 1px solid black;
+    width: 800px;
+    height: 600px;
+    float: right;
+    background-image: url('img_massa.png');
+    background-position: center;
+    background-size: cover;
+}
+.caixa_performance{
+    border: 1px solid black;
+    width: 800px;
+    height: 600px;
+    float: right;
+    background-image: url('img_performance.png');
+    background-position: center;
+    background-size: cover;
+}
+.caixa_secar{
+    border: 1px solid black;
+    width: 800px;
+    height: 600px;
+    float: right;
+    background-image: url('img_secar.png');
+    background-position: center;
+    background-size: cover;
+}
+.caixa_forca{
+    border: 1px solid black;
+    width: 800px;
+    height: 600px;
+    float: right;
+    background-image: url('img_forca.png');
+    background-position: center;
+    background-size: cover;
+}
+.caixa_preguica{
+    border: 1px solid black;
+    width: 800px;
+    height: 600px;
+    float: right;
+    background-image: url('img_preguica.png');
+    background-position: center;
+    background-size: cover;
+}
+.caixa_bomba{
+    border: 1px solid black;
+    width: 800px;
+    height: 600px;
+    float: right;
+    background-image: url('img_bomba.png');
+    background-position: center;
+    background-size: cover;
+}
+.caixa_chifre{
+    border: 1px solid black;
+    width: 800px;
+    height: 600px;
+    float: right;
+    background-image: url('img_chifre.png');
+    background-position: center;
+    background-size: cover;
+}

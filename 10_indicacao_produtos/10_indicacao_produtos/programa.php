@@ -1,8 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendação de Produtos Marombas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+</body>
+</html>
 <pre>
 <?php
 // mostrar erros 
-    //error_reporting(E_ALL);
-    //ini_set('display_errors', '1');
+    // error_reporting(E_ALL);
+    // ini_set('display_errors', '1');
 // armazena os dados enviados em $_POST na variavel $lista
     // var_dump($_POST);
     $lista = $_POST;
@@ -95,26 +108,32 @@ if($mostrar_resultado == true){
             // echo "massa";
             $indicacao = "WHEY PROTEIN";
             $indicacao2 = "HEMOGENIN";
+            $classe = "caixa_massa";
             break;        
         case 1:
             // echo "performance";
             $indicacao = "PRÉ-TREINO";
             $indicacao2 = "ESTANOZOLOL";
+            $classe = "caixa_performance";
             break;        
         case 2:
             // echo "secar";
             $indicacao = "SHAKE";
             $indicacao2 = "TREMBOLONA";
+            $classe = "caixa_secar";
             break;        
         case 3:
             // echo "forca";
             $indicacao = "CREATINA";
             $indicacao2 = "OXANDROLONA";
+            $classe = "caixa_forca";
             break;        
         case 4:
             // echo "preguiça";
             $indicacao = "VERGONHA NA CARA";
             $indicacao2 = "CHIFRE";
+            $classe = "caixa_preguica";
+            $classe_extra = "caixa_chifre";
             break;
     }
     $veneno = "";
@@ -126,6 +145,12 @@ if($mostrar_resultado == true){
     }
     if($bomba == "true"){
         $veneno = "<h2>JUNTO COM</h2><h1>$indicacao2</h1> ";
+        if($classe_extra == "caixa_chifre"){
+            $classe = $classe_extra;
+        }
+        else{
+            $classe = "caixa_bomba";
+        }
     }
     elseif($bomba == "random"){
         aleatoriedade();
@@ -133,8 +158,15 @@ if($mostrar_resultado == true){
         $fator_aleatorio = aleatoriedade();
         // echo "$fator_aleatorio";
         if($fator_aleatorio <= 4){
-            $veneno = "<h2>JUNTO COM</h2><h1>$indicacao2</h1> ";
+            if($classe_extra == "caixa_chifre"){
+                $classe = $classe_extra;
+                $veneno = "<h2>JUNTO COM</h2><h1>$indicacao2</h1> ";
+            }
+            else{
+                $classe = "caixa_bomba";
+            }
         }
+        
     }
 }
     function resposta_final($resp_fin, $indicacao, $veneno){
@@ -151,3 +183,6 @@ if($mostrar_resultado == true){
     echo resposta_final($resp_fin, $indicacao, $veneno);
 ?>
 <button onclick="window.location.href = 'index.html'">REFAZER</button>
+<div class="<?php echo $classe ?>">
+        
+</div>
